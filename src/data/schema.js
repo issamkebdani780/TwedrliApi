@@ -3,7 +3,7 @@ import { C } from "../constants";
 export const SCHEMA = [
   {
     table: "users",
-    color: "#60A5FA", // Blue-ish
+    color: "#60A5FA",
     fields: [
       { name: "id", type: "INT PK AI" },
       { name: "name", type: "VARCHAR(100)" },
@@ -16,7 +16,7 @@ export const SCHEMA = [
   },
   {
     table: "products",
-    color: "#34D399", // Green-ish
+    color: "#34D399",
     fields: [
       { name: "id", type: "INT PK AI" },
       { name: "title", type: "VARCHAR(150)" },
@@ -31,7 +31,7 @@ export const SCHEMA = [
   },
   {
     table: "posts",
-    color: "#F87171", // Red-ish
+    color: "#F87171",
     fields: [
       { name: "id", type: "INT PK AI" },
       { name: "user_id", type: "INT FK (users)" },
@@ -43,10 +43,4 @@ export const SCHEMA = [
   },
 ];
 
-export const CONSTRAINTS = [
-  { name: "users_chk_1",    clause: "role IN ('user', 'admin')" },
-  { name: "users_chk_2",    clause: "department IN ('math', 'sm', 'info', 'st')" },
-  { name: "products_chk_1", clause: "category IN ('Fashion', 'Electronics', 'Home & Living', 'Beauty', 'Sport', 'Books', 'Other')" },
-  { name: "products_chk_2", clause: "status IN ('lost', 'found', 'claimed')" },
-  { name: "products_chk_3", clause: "location IN ('info', 'sm', 'st', 'math')" },
-];
+export const CONSTRAINTS = [];

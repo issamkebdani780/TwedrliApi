@@ -29,17 +29,7 @@ export default function SchemaSection() {
           ))}
         </div>
 
-        <div style={{ marginTop: 32, background: C.surface, border: `1px solid ${C.border}`, borderRadius: 14, padding: "24px" }}>
-          <p style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "1rem", marginBottom: 16 }}>Check Constraints</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {CONSTRAINTS.map(c => (
-              <div key={c.name} style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "wrap" }}>
-                <code style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: ".75rem", color: C.purple, minWidth: 150 }}>{c.name}</code>
-                <code style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: ".75rem", color: C.muted }}>{c.clause}</code>
-              </div>
-            ))}
-          </div>
-        </div>
+
       </div>
     </section>
   );
