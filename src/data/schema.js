@@ -11,6 +11,7 @@ export const SCHEMA = [
       { name: "password", type: "VARCHAR(255)" },
       { name: "role", type: "VARCHAR(10) DEFAULT 'user'" },
       { name: "department", type: "TEXT NULL" },
+      { name: "img_url", type: "TEXT NULL" },
       { name: "created_at", type: "TIMESTAMP DEFAULT NOW()" },
     ],
   },
@@ -41,6 +42,16 @@ export const SCHEMA = [
       { name: "title", type: "VARCHAR(150)" },
       { name: "description", type: "TEXT" },
       { name: "created_at", type: "TIMESTAMP DEFAULT NOW()" },
+    ],
+  },
+  {
+    table: "budgets",
+    color: "#FCD34D",
+    fields: [
+      { name: "id", type: "INT PK AI" },
+      { name: "name", type: "TEXT NULL" },
+      { name: "value", type: "TINYINT(1) DEFAULT 0" },
+      { name: "user_id", type: "INT FK (users)" },
     ],
   },
 ];
