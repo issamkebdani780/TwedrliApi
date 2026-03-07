@@ -45,15 +45,17 @@ export const SCHEMA = [
     ],
   },
   {
-    table: "budgets",
-    color: "#FCD34D",
+    table: "badges",
+    color: "#A78BFA",
     fields: [
       { name: "id", type: "INT PK AI" },
-      { name: "name", type: "TEXT NULL" },
-      { name: "value", type: "TINYINT(1) DEFAULT 0" },
       { name: "user_id", type: "INT FK (users)" },
+      ...Array.from({ length: 29 }, (_, i) => ({
+        name: `b${i + 1}`,
+        type: "BOOL DEFAULT FALSE",
+      })),
     ],
-  },
+  }
 ];
 
 export const CONSTRAINTS = [];
