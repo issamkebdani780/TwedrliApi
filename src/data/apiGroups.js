@@ -279,4 +279,52 @@ export const API_GROUPS = [
     },
   ],
 },
+
+  {
+    key: "messages",
+    label: "Messages",
+    emoji: "💬",
+    color: C.blue,
+    desc: "Private messaging between users for coordination on lost & found items.",
+    endpoints: [
+      {
+        method: "GET",
+        path: "/messages/:senderId/:receiverId",
+        summary: "Get conversation history",
+        desc: "Returns all messages between two users ordered by date.",
+        params: [
+          { name: "senderId", type: "integer", desc: "ID of the first user" },
+          { name: "receiverId", type: "integer", desc: "ID of the second user" }
+        ],
+        response: `[\n  {\n    "id": 1,\n    "sender_id": 1,\n    "receiver_id": 2,\n    "content": "Hello, I found your bag!",\n    "created_at": "2025-03-02T14:30:00.000Z"\n  }\n]`,
+      },
+      {
+        method: "GET",
+        path: "/messages/user/:userId",
+        summary: "Get active chats",
+        desc: "Returns a list of unique users this user has chatted with, and the timestamp of the last message.",
+        params: [{ name: "userId", type: "integer", desc: "Current user ID" }],
+        response: `[\n  {\n    "contact_id": 2,\n    "last_message_at": "2025-03-02T14:30:00.000Z"\n  }\n]`,
+      },
+      {
+        method: "POST",
+        path: "/messages",
+        summary: "Send a message",
+        desc: "Sends a new message to another user.",
+        body: [
+          { name: "sender_id", type: "integer", required: true },
+          { name: "receiver_id", type: "integer", required: true },
+          { name: "content", type: "string", required: true }
+        ],
+        response: `{ "message": "Message sent", "messageId": 42 }`,
+      },
+      {
+        method: "DELETE",
+        path: "/messages/:id",
+        summary: "Delete a message",
+        desc: "Removes a message by its ID.",
+        response: `{ "message": "Message deleted" }`,
+      },
+    ],
+  },
 ];

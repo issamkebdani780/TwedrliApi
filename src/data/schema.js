@@ -55,6 +55,17 @@ export const SCHEMA = [
         type: "BOOL DEFAULT FALSE",
       })),
     ],
+  },
+  {
+    table: "messages",
+    color: "#60A5FA",
+    fields: [
+      { name: "id", type: "INT PK AI" },
+      { name: "sender_id", type: "INT FK (users)" },
+      { name: "receiver_id", type: "INT FK (users)" },
+      { name: "content", type: "TEXT" },
+      { name: "created_at", type: "TIMESTAMP DEFAULT NOW()" },
+    ],
   }
 ];
 
