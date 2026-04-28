@@ -50,7 +50,7 @@ export const SCHEMA = [
     fields: [
       { name: "id", type: "INT PK AI" },
       { name: "user_id", type: "INT FK (users)" },
-      ...Array.from({ length: 29 }, (_, i) => ({
+      ...Array.from({ length: 3 }, (_, i) => ({
         name: `b${i + 1}`,
         type: "BOOL DEFAULT FALSE",
       })),
